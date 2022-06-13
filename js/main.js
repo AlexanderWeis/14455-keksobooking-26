@@ -11,7 +11,7 @@ const getRandomNumber = (minFirstNumber, maxSecondNumber) => {
   if (minFirstNumber >= 0 && maxSecondNumber >= 0 && minFirstNumber < maxSecondNumber && minFirstNumber !== maxSecondNumber) {
     minFirstNumber = Math.round(minFirstNumber);
     maxSecondNumber =  Math.round(maxSecondNumber);
-    return Math.random() * (maxSecondNumber - minFirstNumber) + minFirstNumber;
+    return Math.round(Math.random() * (maxSecondNumber - minFirstNumber) + minFirstNumber);
   }
   throw new Error('Случайное целое число не может быть найдено, так как нарушено одно из условий');
 };
@@ -36,6 +36,7 @@ getRandomInteger(22, 33);
 
 /*
 Функция 2: возвращает  случайное число с плавающей точкой из переданного диапазона включительно
+- числа могут быть как целые, так и дробные
 – диапазон может быть только положительный, включая ноль
 – "реакция функции" на передачу значение «до» меньшее, чем значение «от», или равное ему
 – Функция может не гарантировать верный результат, если в переданном диапазоне нет ни одного подходящего числа
